@@ -1050,7 +1050,10 @@
 
     .why { padding: 60px 20px; background-attachment: scroll; }
     .why-grid { grid-template-columns: 1fr; gap: 16px; }
-    .why-item { padding: 36px 24px; border: 1px solid rgba(25,120,183,0.15); border-radius: 4px; }
+    .why-item { padding: 36px 24px; border: 1px solid rgba(25,120,183,0.15); border-radius: 4px; overflow: visible; }
+    .why-item-body { position: relative; top: auto; left: auto; right: auto; box-shadow: none; border: none; border-top: 1px solid rgba(25,120,183,0.12); border-radius: 0; padding: 16px 0 0 0; margin-top: 16px; background: transparent; }
+    .why-item.open .why-item-body { display: block; }
+    .why-item.open { box-shadow: none; z-index: 1; }
 
     .cta-section { padding: 60px 20px; }
     .cta-section h2 { font-size: 1.8rem; }
