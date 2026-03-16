@@ -1114,7 +1114,7 @@
     .mobile-menu {
       display: none;
       position: fixed;
-      top: 80px;
+      top: 0;
       left: 0;
       width: 100%;
       background: rgba(244,248,253,0.98);
@@ -1673,12 +1673,22 @@
   // Mobile menu
   var hamburger = document.getElementById('hamburger');
   var mobileMenu = document.getElementById('mobile-menu');
+  function positionMobileMenu() {
+    var nav = document.querySelector('nav');
+    if (nav && mobileMenu) {
+      mobileMenu.style.top = nav.offsetHeight + 'px';
+    }
+  }
   if (hamburger) {
     hamburger.addEventListener('click', function() {
+      positionMobileMenu();
       hamburger.classList.toggle('open');
       mobileMenu.classList.toggle('open');
     });
   }
+  window.addEventListener('resize', function() {
+    if (mobileMenu.classList.contains('open')) positionMobileMenu();
+  });
   function closeMobileMenu() {
     if (hamburger) hamburger.classList.remove('open');
     if (mobileMenu) mobileMenu.classList.remove('open');
