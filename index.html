@@ -535,15 +535,15 @@
   .service-card:hover .service-icon { filter: none; }
   .service-card:hover .service-link { color: var(--accent); }
 
-  .service-card.active { background: #1978B7; box-shadow: 0 8px 32px rgba(13,27,42,0.18); transform: translateY(-3px); cursor: pointer; }
-  .service-card.active::before { width: 100%; }
-  .service-card.active h3 { color: #ffffff; }
-  .service-card.active .service-num { color: rgba(255,255,255,0.5); }
-  .service-card.active .service-icon { filter: none; }
-  .service-card.active .service-link { color: var(--accent); opacity: 1; display: none; }
-  .service-coming-soon { display: none; font-size: 0.95rem; line-height: 1.5; margin-top: 16px; }
-  .service-card.active .service-coming-soon { display: block; color: rgba(255,255,255,0.92) !important; }
-  .service-card { cursor: pointer; }
+  .service-card.active { background: #ffffff !important; box-shadow: 0 4px 16px rgba(13,27,42,0.10) !important; transform: none !important; cursor: pointer; }
+  .service-card.active::before { width: 0 !important; }
+  .service-card.active .service-icon { display: none; }
+  .service-card.active h3 { display: none !important; }
+  .service-card.active .service-num { display: none; }
+  .service-card.active .service-link { display: none !important; }
+  .service-coming-soon { display: none; font-size: 0.95rem; line-height: 1.5; }
+  .service-card.active .service-coming-soon { display: flex; align-items: center; justify-content: center; min-height: 120px; color: rgba(13,27,42,0.75) !important; text-align: center; }
+  .service-card { cursor: default; }
 
   .service-num {
     font-family: 'Barlow', sans-serif;
@@ -1560,43 +1560,43 @@
   </div>
 
   <div class="services-grid">
-    <div class="service-card fade-up" onclick="this.classList.toggle('active')">
+    <div class="service-card fade-up" onclick="this.classList.remove('active')">
       <svg class="service-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M22 8L28 18H38L30 25L33 36L22 29L11 36L14 25L6 18H16L22 8Z" stroke="#1978B7" stroke-width="1.5" stroke-linejoin="round"/>
       </svg>
       <h3>Training</h3>
-      <a href="#" class="service-link" onclick="event.preventDefault(); event.stopPropagation();">More info →</a>
+      <a href="#" class="service-link" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.service-card').classList.add('active');">More info →</a>
       <p class="service-coming-soon">More information coming soon. In the meantime, feel free to contact us.</p>
     </div>
 
-    <div class="service-card fade-up" onclick="this.classList.toggle('active')">
+    <div class="service-card fade-up" onclick="this.classList.remove('active')">
       <svg class="service-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M22 4L38 13V31L22 40L6 31V13L22 4Z" stroke="#1978B7" stroke-width="1.5"/>
         <path d="M22 14V22M22 22V30M22 22H30M22 22H14" stroke="#1978B7" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
       <h3>Consultancy</h3>
-      <a href="#" class="service-link" onclick="event.preventDefault(); event.stopPropagation();">More info →</a>
+      <a href="#" class="service-link" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.service-card').classList.add('active');">More info →</a>
       <p class="service-coming-soon">More information coming soon. In the meantime, feel free to contact us.</p>
     </div>
 
-    <div class="service-card fade-up" onclick="this.classList.toggle('active')">
+    <div class="service-card fade-up" onclick="this.classList.remove('active')">
       <svg class="service-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="8" y="8" width="28" height="28" rx="2" stroke="#1978B7" stroke-width="1.5"/>
         <path d="M15 22L20 27L29 17" stroke="#1978B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       <h3>Project management</h3>
-      <a href="#" class="service-link" onclick="event.preventDefault(); event.stopPropagation();">More info →</a>
+      <a href="#" class="service-link" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.service-card').classList.add('active');">More info →</a>
       <p class="service-coming-soon">More information coming soon. In the meantime, feel free to contact us.</p>
     </div>
 
-    <div class="service-card fade-up" onclick="this.classList.toggle('active')">
+    <div class="service-card fade-up" onclick="this.classList.remove('active')">
       <svg class="service-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="22" cy="22" r="14" stroke="#1978B7" stroke-width="1.5"/>
         <path d="M16 22C16 22 18 26 22 26C26 26 28 22 28 22" stroke="#1978B7" stroke-width="1.5" stroke-linecap="round"/>
         <path d="M17 17L17.5 18M27 17L26.5 18" stroke="#1978B7" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
       <h3>Coaching</h3>
-      <a href="#" class="service-link" onclick="event.preventDefault(); event.stopPropagation();">More info →</a>
+      <a href="#" class="service-link" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.service-card').classList.add('active');">More info →</a>
       <p class="service-coming-soon">More information coming soon. In the meantime, feel free to contact us.</p>
     </div>
   </div>
