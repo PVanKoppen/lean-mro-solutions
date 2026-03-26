@@ -199,7 +199,7 @@
     background-image: url('Wolkenlucht-5.jpg');
     background-size: cover;
     background-position: center center;
-    background-attachment: scroll;
+    background-attachment: fixed;
   }
 
   .hero-left {
@@ -1783,16 +1783,5 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   document.getElementById('modalSuccess').classList.add('show');
 });
 
-  // Parallax sticky achtergrond voor Safari en alle browsers
-  var hero = document.querySelector('.hero');
-  function updateParallax() {
-    var scrollY = window.pageYOffset;
-    var heroHeight = hero.offsetHeight;
-    if (scrollY <= heroHeight) {
-      var offset = scrollY * 0.4;
-      hero.style.backgroundPosition = 'center calc(50% + ' + offset + 'px)';
-    }
-  }
-  window.addEventListener('scroll', updateParallax, { passive: true });
 
 </script>
