@@ -190,15 +190,22 @@
   .nav-cta:hover { background: var(--accent-dark) !important; color: var(--white) !important; }
 
   /* ── HERO ── */
+  .hero-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('Wolkenlucht-5.jpg');
+    background-size: cover;
+    background-position: center 75%;
+    z-index: 0;
+  }
+
   .hero {
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     position: relative;
-    background-image: url('Wolkenlucht-5.jpg');
-    background-size: cover;
-    background-position: center 75%;
-    background-attachment: fixed;
+    z-index: 1;
   }
 
   .hero-left {
@@ -1377,6 +1384,7 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg"></div>
   <div class="hero-left">
     <div class="hero-tag">MRO Consultancy Specialists</div>
     <h1>Your Challenge<br>Is Our<br><em>Mission.</em></h1>
